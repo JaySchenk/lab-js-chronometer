@@ -22,11 +22,16 @@ class Chronometer {
   }
 
   getSeconds() {
-    // ... your code goes here
+    let passedSeconds = this.currentTime % 60;
+    return passedSeconds;
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    if (value.toString().length === 2) {
+      return value.toString();
+    } else {
+      return '0' + value.toString();
+    }
   }
 
   stop() {
