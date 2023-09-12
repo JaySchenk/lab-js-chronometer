@@ -35,14 +35,22 @@ class Chronometer {
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
+   // should call clearInterval
+   // should clear the existing interval timer
+   // Hint: Use clearInterval.
   }
 
   reset() {
+    this.currentTime=0;
+    //reset(this.Chronometer);
     // ... your code goes here
   }
 
   split() {
+    const minutes = this.computeTwoDigitNumber(this.getMinutes());
+    const seconds = this.computeTwoDigitNumber(this.getSeconds());
+    return `${minutes}:${seconds}`;
     // ... your code goes here
   }
 }
