@@ -1,14 +1,26 @@
 class Chronometer {
   constructor() {
-    // ... your code goes here
+    this.currentTime = 0;
+    this.intervalId = null;
   }
 
   start(printTimeCallback) {
-    // ... your code goes here
+    if (typeof printTimeCallback === 'function') {
+      this.intervalId = setInterval(() => {
+        this.currentTime += 1;
+        printTimeCallback(this.currentTime);
+      }, 1000);
+    } else {
+      this.intervalId = setInterval(() => {
+        this.currentTime += 1;
+      }, 1000);
+    }
   }
-
   getMinutes() {
-    // ... your code goes here
+    return Math.floor(this.currentTime / 60);
+     
+    // this.currentime / 60  Math.floor 
+    // return: number of minutes
   }
 
   getSeconds() {
