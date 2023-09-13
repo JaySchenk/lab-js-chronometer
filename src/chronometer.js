@@ -33,18 +33,18 @@ class Chronometer {
       return '0' + value.toString();
     }
   }
-// alternatively we can use the 1 line below
+  // alternatively we can use the 1 line below
   // return ('0' + value).slice(-2);
 
   stop() {
     clearInterval(this.intervalId);
-   // should call clearInterval
-   // should clear the existing interval timer
-   // Hint: Use clearInterval.
+    // should call clearInterval
+    // should clear the existing interval timer
+    // Hint: Use clearInterval.
   }
 
   reset() {
-    this.currentTime=0;
+    this.currentTime = 0;
     //reset(this.Chronometer);
     // ... your code goes here
   }
