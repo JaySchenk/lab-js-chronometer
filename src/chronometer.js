@@ -5,10 +5,10 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    if (typeof printTimeCallback === 'function') {
+    if (printTimeCallback) {
       this.intervalId = setInterval(() => {
         this.currentTime += 1;
-        printTimeCallback(this.currentTime);
+        printTimeCallback();
       }, 1000);
     } else {
       this.intervalId = setInterval(() => {
@@ -33,6 +33,8 @@ class Chronometer {
       return '0' + value.toString();
     }
   }
+// alternatively we can use the 1 line below
+  // return ('0' + value).slice(-2);
 
   stop() {
     clearInterval(this.intervalId);
@@ -48,9 +50,8 @@ class Chronometer {
   }
 
   split() {
-    const minutes = this.computeTwoDigitNumber(this.getMinutes());
-    const seconds = this.computeTwoDigitNumber(this.getSeconds());
-    return `${minutes}:${seconds}`;
+
+    return `${this.computeTwoDigitNumber(this.getMinutes())}:${this.computeTwoDigitNumber(this.getSeconds())}`;
     // ... your code goes here
   }
 }
